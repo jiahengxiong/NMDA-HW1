@@ -70,13 +70,13 @@ def calculate_distance(src_addr, dst_addr):
 
 
 if __name__ == '__main__':
-    filename = '../server_list.csv'
+    filename = 'server_list.csv'
     ip_list = get_ip(filename)
     local_address = get_local_address()
     start_time = time.time()
     locate_counter = 0
     average_RTT = []
-    with open('../rtt_distance.csv', 'a', newline='') as file:
+    with open('rtt_distance.csv', 'a', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(['avg_rtt', 'distance'])
     for ip in ip_list:
@@ -110,6 +110,6 @@ if __name__ == '__main__':
             average_rtt = sum(RTT) / len(RTT)
             dis = calculate_distance(local_address, dst_address)
             print(f"Average rtt is {average_rtt} for {ip} with distance {dis}, the location is {dst_address}")
-            with open('../rtt_distance.csv', 'a', newline='') as file:
+            with open('rtt_distance.csv', 'a', newline='') as file:
                 writer = csv.writer(file)
                 writer.writerow([average_rtt, dis])

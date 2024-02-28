@@ -53,7 +53,7 @@ def main():
     gnupg_urls = get_urls_from_page('https://www.gnu.org/prep/ftp.html')
     debian_urls = get_urls_from_page('https://www.debian.org/mirror/list')
     all_urls = sorted(gnupg_urls.union(debian_urls))
-    save_urls_to_csv(all_urls, '../server_list.csv')
+    save_urls_to_csv(all_urls, 'server_list.csv')
 
 
 if __name__ == '__main__':

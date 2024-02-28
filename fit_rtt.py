@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-data = pd.read_csv('../rtt_distance.csv', header=0)
+data = pd.read_csv('rtt_distance.csv', header=0)
 
 data['distance'] = data['distance'].str.replace(' km', '').astype(float)
 
