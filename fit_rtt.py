@@ -15,17 +15,24 @@ y_pred = polynomial(data['distance'])
 
 fig = plt.figure()
 
-plt.plot(data['distance'], data['avg_rtt'], '--r', label='Average RTT')
-plt.scatter(data['distance'], data['avg_rtt'], color='red', label='Average RTT', s=5)
+plt.plot(data['distance'], data['avg_rtt'], '--r', label='Average RTT plot')
+plt.scatter(data['distance'], data['avg_rtt'], color='red', label='Average RTT measured', s=5)
 
 plt.plot(data['distance'], y_pred, '-b', label='Fitted Line')
 
-plt.title('Average RTT vs Distance Scatter Plot')
+plt.title('Average RTT vs Distance')
 plt.xlabel('Distance (km)')
 plt.ylabel('RTT (ms)')
 
-plt.legend()
-plt.grid(visible=True)
-
-# 显示图表
+plt.legend(
+    loc='best',
+    handlelength=2.5,
+    handletextpad=0.5,
+    labelspacing=0.3,  # 增加标签之间的间距
+    borderaxespad=0.2,
+    fontsize='small',
+    framealpha=0.1
+)
+plt.grid(visible=True, color='gray', linewidth=0.5)
+plt.savefig('rtt_distance.jpg')
 plt.show()
