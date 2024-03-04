@@ -28,11 +28,11 @@ plt.legend(
     loc='best',
     handlelength=2.5,
     handletextpad=0.5,
-    labelspacing=0.3,  # 增加标签之间的间距
+    labelspacing=0.3,
     borderaxespad=0.2,
     fontsize='small',
     framealpha=0
 )
 plt.grid(visible=True, color='gray', linewidth=0.5)
-plt.savefig('rtt_distance.png', dpi=2000)
+plt.savefig('rtt_distance.pdf', dpi=2000)
 plt.show()

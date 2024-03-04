@@ -106,7 +106,7 @@ if __name__ == '__main__':
                 congestion_counter = 0
             if congestion_counter >= 5:
                 break
-        if len(RTT) > 0 and dst_address is not None:
+        if len(RTT) > 10 and dst_address is not None:
             average_rtt = sum(RTT) / len(RTT)
             dis = calculate_distance(local_address, dst_address)
             print(f"Average rtt is {average_rtt} for {ip} with distance {dis}, the location is {dst_address}")
